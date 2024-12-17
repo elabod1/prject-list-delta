@@ -11,10 +11,10 @@ function App() {
    
   return (
     <>
-    <InputList/>
-    <List expenses={expenses} onDelete={(id) => setExpenses(expenses.filter(e=>e.id !== id ))}/>
-    </>
+    <InputList onSubmit={expense =>setExpenses([...expenses,{...expense,id:expense.length+1}])}/>
+    <List expenses={expenses} onDelete={(id) => setExpenses(expenses.filter(e=>e.id !== id ))}/>
+  </>
+  
   )
 }
-
 export default App
