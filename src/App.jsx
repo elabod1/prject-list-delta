@@ -1,5 +1,6 @@
 import { useState } from "react"
 import List from "./components/List"
+import InputList from "./components/InputList"
 
 function App() {
   const [expenses, setExpenses]= useState([
@@ -10,7 +11,8 @@ function App() {
    
   return (
     <>
-        <List expenses={expenses} onDelete={(id) => setExpenses(expenses.filter(e=>e.id !== id ))}/>
+    <InputList/>
+    <List expenses={expenses} onDelete={(id) => setExpenses(expenses.filter(e=>e.id !== id ))}/>
     </>
   )
 }
